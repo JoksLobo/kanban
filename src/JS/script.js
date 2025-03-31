@@ -27,20 +27,35 @@ document.querySelectorAll('.kanban-cards').forEach(column => { //seleciona todas
     })
 })
 
+// referente à modal
 const modal = document.getElementById("myModal");
 const openModal = document.getElementById("openModal");
 const closeModal = document.querySelector(".close");
 
-openModal.addEventListener("click", () => {
+openModal.addEventListener("click", () => { //abre a modal
     modal.style.display = "block";
 });
 
-closeModal.addEventListener("click", () => {
+closeModal.addEventListener("click", () => { //fecha a modal clicando no x
     modal.style.display = "none";
 });
 
-window.addEventListener("click", (e) => {
+window.addEventListener("click", (e) => { //fecha a modal clicando fora dela
     if (e.target === modal) {
         modal.style.display = "none";
     }
 });
+
+//referente à criação de cards novos
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    //Capturara prioridade e a descrição
+    const priority = document.querySelector("input[type='radio']:checked")?.id;
+    const description = document.querySelector("input[type='text']").value;
+
+    if (!priority || !description) {
+        alert("Preencha todos os campos!");
+        return;
+    }
+})
