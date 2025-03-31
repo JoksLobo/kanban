@@ -81,3 +81,12 @@ body {
     cursor: pointer;
     border: none;
 }
+
+.kanban-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
