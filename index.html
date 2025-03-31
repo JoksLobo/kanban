@@ -16,12 +16,12 @@
                     Pendente
                 </h2>
 
-                <button class=add-card>
+                <button class="add-card" id="openModal">
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
             <div class="kanban-cards">
-                <div class="kanban-card">
+                <div class="kanban-card" draggable="true">
                     <div class="badge high">
                         <span>Alta prioridade</span>
                     </div>
@@ -51,19 +51,19 @@
             </div>
         </div>
 
-<!-- coluna 2 -->
+        <!-- coluna 2 -->
         <div class="kanban-column" data-id="2">
             <div class="kanban-title">
                 <h2>
                     Em andamento
                 </h2>
 
-                <button class=add-card>
+                <button class="add-card" id="openModal">
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
             <div class="kanban-cards">
-                <div class="kanban-card">
+                <div class="kanban-card" draggable="true">
                     <div class="badge medium">
                         <span>Média prioridade</span>
                     </div>
@@ -100,12 +100,12 @@
                     Finalizada
                 </h2>
 
-                <button class=add-card>
+                <button class="add-card" id="openModal">
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
             <div class="kanban-cards">
-                <div class="kanban-card">
+                <div class="kanban-card" draggable="true">
                     <div class="badge low">
                         <span>Baixa prioridade</span>
                     </div>
@@ -142,12 +142,12 @@
                     Abandonada
                 </h2>
 
-                <button class=add-card>
+                <button class="add-card" id="openModal">
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
             <div class="kanban-cards">
-                <div class="kanban-card">
+                <div class="kanban-card" draggable="true">
                     <div class="badge high">
                         <span>Alta prioridade</span>
                     </div>
@@ -177,5 +177,27 @@
             </div>
         </div>
     </main>
+
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Informe a tarefa</h2>
+            <form>
+                <div class="radio-group">
+                    <input type="radio" name="high-priority" id="high">
+                    <label for="high">Alta prioridade</label>
+                    <input type="radio" name="medium-priority" id="medium">
+                    <label for="medium">Média prioridade</label>
+                    <input type="radio" name="low-priority" id="low">
+                    <label for="low">Baixa prioridade</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Descreva sua tarefa">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./src/JS/script.js"></script>
 </body>
 </html>
