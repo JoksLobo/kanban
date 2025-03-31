@@ -73,3 +73,11 @@ body {
     font-size: 18px;
     color: #4b5563;
 }
+
+.add-card {
+    color: #4b5563;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
