@@ -23,3 +23,43 @@ body {
     height: 90vh;
     overflow-x: auto;
 }
+
+.kanban-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    height: 100%;
+    min-width: 252px;
+    overflow-y: auto;
+    background-color: #f6f8fc;
+    border-radius: 12px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.kanban-column::after {
+    position: absolute;
+    content: '';
+    height: 5px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.kanban-column[data-id="1"]::after {
+    background-color: #F7374F;
+}
+
+.kanban-column[data-id="2"]::after {
+    background-color: #F6DC43;
+}
+
+.kanban-column[data-id="3"]::after {
+    background-color: #1F7D53;
+}
+
+.kanban-column[data-id="4"]::after {
+    background-color: #211C84;
+}
