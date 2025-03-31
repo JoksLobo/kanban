@@ -58,4 +58,68 @@ document.querySelector("form").addEventListener("submit", function (e) {
         alert("Preencha todos os campos!");
         return;
     }
-})
+
+    //cria o card dinamicamente
+    const card = document.createElement("div");
+    card.className = "kanban-card";
+    card.setAttribute("draggable", "true");
+
+    //badge de prioridade
+    const badge = document.createElement("div");
+    badge.className = `badge ${priority}`;
+    const badgeText = document.createElement("span");
+    badgeText.textContent = priority === "high" ? "Alta prioridade" : priority === "medium" ? "Média prioridade" : "Baixa prioridade";
+    badge.appendChild(badgeText);
+
+    //titulo do card
+    const cardTitle = document.createElement("p");
+    cardTitle.className = "card-title";
+    cardTitle.textContent = description;
+
+    //informações do card
+    const cardInfos = document.createElement("div");
+    cardInfos.className = "card-infos";
+
+    const cardIcons = document.createElement("div");
+    cardIcons.className = "card-icons";
+    const commentIcon = document.createElement("p");
+    commentIcon.innerHTML = `<i class="fa-regular fa-comment"></i> 0`;
+    const attachmentIcon = document.createElement("p");
+    attachmentIcon.innerHTML = `<i class="fa-solid fa-paperclip"></i> 0`;
+
+    cardIcons.appendChild(commentIcon);
+    cardIcons.appendChild(attachmentIcon);
+
+    cardInfos.appendChild(cardIcons);
+
+    const userDiv = document.createElement("div");
+    userDiv.className = "user";
+    const userImage = document.createElement("img");
+    userImage.src = "/src/images/woman-9210161_1280.jpg";
+    userDiv.appendChild(userImage);
+
+    cardInfos.appendChild(userDiv);
+
+    //montar o card
+    card.appendChild(badge);
+    card.appendChild(cardTitle);
+    card.appendChild(cardInfos);
+
+    //adicionar o card à coluna correspondente
+    const columns = document.querySelectorAll(".kanban-cards");
+    const columnIndex = priority === "high" ? 0 : priority === "medium" ? 1 : priority === "low" ? 2 : 3; // Ajuste o índice conforme necessári
+    columns[columnIndex].appendChild(card);
+
+    //adiona eventos de drang-n-drop ao novo card
+    card.addEventListener("dragstart", e => {
+        e.currentTarget.classList.add("dragging");
+    });
+
+    card.addEventListener("dragend", e => {
+        e.currentTarget.classList.remove("dragging");
+    });
+
+    // Fechar a modal e resetar o formulário
+    document.querySelector("form").reset();
+    document.getElementById("myModal").style.display = "none";
+});
