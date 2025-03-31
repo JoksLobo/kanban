@@ -63,3 +63,13 @@ body {
 .kanban-column[data-id="4"]::after {
     background-color: #211C84;
 }
+
+.kanban-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kanban-title h2 {
+    font-size: 18px;
+    color: #4b5563;
+}
