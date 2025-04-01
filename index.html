@@ -33,7 +33,7 @@
                     <div class="card-infos">
                         <div class="card-icons">
                             <p>
-                                <i class="fa-regular fa-comment"></i>
+                                <i id="open-comments-modal" class="fa-regular fa-comment"></i>
                                 1
                             </p>
 
@@ -117,7 +117,7 @@
                     <div class="card-infos">
                         <div class="card-icons">
                             <p>
-                                <i class="fa-regular fa-comment"></i>
+                                <i id="open-comments-modal" class="fa-regular fa-comment"></i>
                                 1
                             </p>
 
@@ -159,7 +159,7 @@
                     <div class="card-infos">
                         <div class="card-icons">
                             <p>
-                                <i class="fa-regular fa-comment"></i>
+                                <i id="open-comments-modal" class="fa-regular fa-comment"></i>
                                 1
                             </p>
 
@@ -184,15 +184,29 @@
             <h2>Informe a tarefa</h2>
             <form>
                 <div class="radio-group">
-                    <input type="radio" name="high-priority" id="high">
+                    <input type="radio" name="priority" id="high">
                     <label for="high">Alta prioridade</label>
-                    <input type="radio" name="medium-priority" id="medium">
+                    <input type="radio" name="priority" id="medium">
                     <label for="medium">Média prioridade</label>
-                    <input type="radio" name="low-priority" id="low">
+                    <input type="radio" name="priority" id="low">
                     <label for="low">Baixa prioridade</label>
                 </div>
                 <div class="input-group">
                     <input type="text" placeholder="Descreva sua tarefa">
+                </div>
+
+                <button class="modal-button" type="submit">Criar Card</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="comments-modal" id="myCModal">
+        <div class="modal-content">
+            <span class="CModalclose">&times;</span>
+            <h2>Deixe um comentário</h2>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Escreva um comentário">
                 </div>
 
                 <button class="modal-button" type="submit">Criar Card</button>

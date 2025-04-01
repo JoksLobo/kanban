@@ -29,8 +29,11 @@ document.querySelectorAll('.kanban-cards').forEach(column => { //seleciona todas
 
 // referente à modal
 const modal = document.getElementById("myModal");
+const cModal = document.getElementById("myCModal");
 const openModal = document.getElementById("openModal");
 const closeModal = document.querySelector(".close");
+const openCModal = document.getElementById("open-comments-modal");
+const closeCModal = document.querySelector(".CModalclose");
 
 openModal.addEventListener("click", () => { //abre a modal
     modal.style.display = "block";
@@ -44,6 +47,14 @@ window.addEventListener("click", (e) => { //fecha a modal clicando fora dela
     if (e.target === modal) {
         modal.style.display = "none";
     }
+});
+
+openCModal.addEventListener("click", () => {
+    cModal.style.display = "block";
+});
+
+closeCModal.addEventListener("click", () => {
+    cModal.style.display = "none";
 });
 
 //referente à criação de cards novos
@@ -107,7 +118,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     //adicionar o card à coluna correspondente
     const columns = document.querySelectorAll(".kanban-cards");
-    const columnIndex = priority === "high" ? 0 : priority === "medium" ? 1 : priority === "low" ? 2 : 3; // Ajuste o índice conforme necessári
+    const columnIndex = priority === "high" ? 0 : priority === "medium" ? 0 : priority === "low" ? 0 : 3; // Ajuste o índice conforme necessári
     columns[columnIndex].appendChild(card);
 
     //adiona eventos de drang-n-drop ao novo card
