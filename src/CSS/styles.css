@@ -194,7 +194,7 @@ body {
     cursor: pointer;
 }
 
-.modal-button {
+.modal-button, .Cmodal-button {
     width: 90px;
     height: 30px;
     border-radius: 10px;
@@ -205,4 +205,15 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.Cmodal-button {
+    width: 120px;
+    height: 40px;
+}
+
+.comment-item {
+    color: red; /* Define a cor do texto como vermelho */
+    font-weight: bold; /* Opcional: deixa o texto em negrito */
+    margin-bottom: 5px; /* Espaçamento entre os comentários */
 }
